@@ -1,0 +1,52 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: mintcream;
+}
+
+nav {
+    margin: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+.btn {
+    padding: 1rem;
+    border: none;
+    font-weight: 600;
+    font-size: 1.25rem;
+    border-radius: .3rem;
+    color: white;
+    width: 100%;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+
+.blue-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0074cc;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+.blue-button:hover {
+    background-color: #0052a6;
+}

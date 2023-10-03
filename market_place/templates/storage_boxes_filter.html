@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title></title>
+{% endblock %}
+
+{% block content %}
+    <h1>All Storage Boxes</h1>
+
+    <form method="get">
+        <label for="filter_by">Filter by:</label>
+        <select name="filter_by" id="filter_by">
+            <option value="">-- Select Filter --</option>
+            <option value="Street_number_lowest">Street_number: Lowest</option>
+            <option value="Street_number_highest">Street_number: Highest</option>
+            <option value="surface_area_smallest">Surface: Smallest</option>
+            <option value="surface_area_largest">Surface: Largest</option>
+        </select>
+
+        <label for="sort_by">Sort by:</label>
+        <select name="sort_by" id="sort_by">
+            <option value="">-- Select Sort --</option>
+            <option value="Street_number_lowest">Street_number: Lowest</option>
+            <option value="Street_number_highest">Street_number: Highest</option>
+            <option value="surface_smallest">Surface: Smallest</option>
+            <option value="surface_largest">Surface: Largest</option>
+        </select>
+
+        <button type="submit">Apply</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Surface (m²)</th>
+                <th>Monthly Price</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for box in storage_boxes %}
+            <tr>
+                <td>{{ box.title }}</td>
+                <td>{{ box.description }}</td>
+                <td>{{ box.surface }}</td>
+                <td>{{ box.monthly_price }}</td>
+                <td>{{ box.city }}, {{ box.postal_code }}</td>
+            </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="3">No storage boxes available.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,14 @@
+<!-- storage_box_form.html -->
+{% extends 'base.html' %}
+{% block title %}
+    <title></title>
+{% endblock %}
+{% block content %}
+    <h1>Create a New Storage Box</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create</button>
+    </form>
+    <a href="{% url 'storage-boxes:storage_box_list' %}">Back to Storage Boxes</a>
+{% endblock %}
